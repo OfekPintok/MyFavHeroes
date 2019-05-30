@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  ~ Created by Ofek Pintok on 5/30/19 9:19 AM
+  -->
+
+<!--
   ~ Created by Ofek Pintok on 5/30/19 8:25 AM
   -->
 
@@ -43,12 +47,12 @@
                 android:layout_marginEnd="8dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Hero Name"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/item_hero_favorite_iv"
                 app:layout_constraintStart_toEndOf="@+id/item_hero_picture_iv"
-                app:layout_constraintTop_toTopOf="@+id/item_hero_picture_iv" />
+                app:layout_constraintTop_toTopOf="@+id/item_hero_picture_iv"
+                tools:text="Hero Name" />
 
             <TextView
                 android:id="@+id/item_hero_abilities_tv"
@@ -58,13 +62,13 @@
                 android:layout_marginEnd="8dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Ability, Ability, Ability, Ability, Ability, Ability, Ability,Ability"
                 android:textSize="18sp"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/item_hero_name_tv"
-                app:layout_constraintTop_toBottomOf="@+id/item_hero_name_tv" />
+                app:layout_constraintTop_toBottomOf="@+id/item_hero_name_tv"
+                tools:text="Ability, Ability, Ability, Ability, Ability, Ability, Ability,Ability" />
 
             <ImageView
                 android:id="@+id/item_hero_favorite_iv"
