@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements HeroAdapter.OnHer
                         InternalStorage.writeObject(MainActivity.this, STORAGE_KEY, heroList);
                     } catch (IOException e) {
                         e.printStackTrace();
-                        Log.d("MainActivity", "Couldn't write new file " + e);
+                        Log.d("MainActivity", getResources().getString(R.string.write_file_error) + e);
                     }
                 }
             }
@@ -192,10 +192,10 @@ public class MainActivity extends AppCompatActivity implements HeroAdapter.OnHer
             return (ArrayList<HeroModel>) InternalStorage.readObject(this, STORAGE_KEY);
         } catch (IOException e) {
             e.printStackTrace();
-            Log.d("MainActivity", "Couldn't load cached data for the reason:" + e);
+            Log.d("MainActivity", getResources().getString(R.string.file_read_error) + e);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            Log.d("MainActivity", "Couldn't load cached data for the reason:" + e);
+            Log.d("MainActivity", getResources().getString(R.string.file_read_error) + e);
         }
 
         return null; // Cached file couldn't be loaded
@@ -212,18 +212,18 @@ public class MainActivity extends AppCompatActivity implements HeroAdapter.OnHer
                 .into(mainCoverImage);
 
         mainCoverImage.setOnClickListener(this);
-        Log.i("MainActivity", "Cover was changed");
+        Log.i("MainActivity", getResources().getString(R.string.cover_was_changed));
     }
 
     private void displayError(Exception e) {
         if (e instanceof NetworkErrorException) {
-            Toast.makeText(this, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.error_internet_connection), Toast.LENGTH_SHORT).show();
 
             ImageView noConnectionIv = findViewById(R.id.main_no_connection_iv);
             noConnectionIv.setVisibility(View.VISIBLE);
             collapsingToolbarLayout.setVisibility(View.GONE);
         } else {
-            Toast.makeText(this, "Error was found: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.error_was_found) + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

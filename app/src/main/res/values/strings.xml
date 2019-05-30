@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Fav Heroes</string>
     <string name="default_title">Choose wisely..</string>
+    <string name="write_file_error">Couldn\'t write new file</string>
+    <string name="file_read_error">Couldn\'t load cached data for the reason:</string>
+    <string name="cover_was_changed">Cover was changed</string>
+    <string name="error_internet_connection">Please check your internet connection</string>
+    <string name="error_was_found">Error was found:</string>
 </resources>
