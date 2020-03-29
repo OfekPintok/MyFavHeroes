@@ -103,8 +103,14 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
         return mHeroList.size();
     }
 
+
+
     public HeroModel getItem(int position) {
-        return mHeroList.get(position);
+        if (mHeroList.size() > position) {
+            return mHeroList.get(position);
+        } else {
+            return null;
+        }
     }
 
     public void setCheckedPosition(int position) {
@@ -129,11 +135,11 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             // Create references for item's fields
-            nameTv = itemView.findViewById(R.id.item_hero_name_tv);
-            abilitiesTv = itemView.findViewById(R.id.item_hero_abilities_tv);
+            nameTv = itemView.findViewById(R.id.detailed_name_tv);
+            abilitiesTv = itemView.findViewById(R.id.detailed_abilities_tv);
             heroIv = itemView.findViewById(R.id.item_hero_picture_iv);
             favoriteIcon = itemView.findViewById(R.id.item_hero_favorite_iv);
-            progressBar = itemView.findViewById(R.id.item_hero_progressbar);
+            progressBar = itemView.findViewById(R.id.detailed_progressbar);
 
             itemView.setOnClickListener(this);
         }
